@@ -1,0 +1,30 @@
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+#pagers {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+
+#next, #prev {
+  float: left;
+  width: 50%;
+  height: 100%;
+}
+
+#next {
+  background-image: url(../images/next.png);
+  background-position: right center;
+  background-repeat: no-repeat;
+}
+
+#prev {
+  background-image: url(../images/prev.png);
+  background-position: left center;
+  background-repeat: no-repeat;
+}
