@@ -3,8 +3,8 @@
 <head>
 
 <script data-main="scripts/main" src="scripts/require.js"></script>
+<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
 <link rel="stylesheet" type="text/css" href="style/style.css" />
-
 </head>
 <body>
 
@@ -12,8 +12,10 @@
 
   <h1>PresJS</h1>
 
+  <hr />
+
   <label for="mmxml">MindMap XML:</label>
-  <textarea name="mmxml" id="mmxml" cols="30" rows="10">
+  <textarea name="mmxml" id="mmxml" rows="10">
 <map version="0.9.0">
 <!-- To view this file, download free mind mapping software FreeMind from http://freemind.sourceforge.net -->
 <node CREATED="1359993650203" ID="ID_876894827" MODIFIED="1359993656922" TEXT="Presentation">
@@ -33,11 +35,29 @@
 </map>
   </textarea>
 
-  <input type="submit" id="submit" value="Start presentation">
+  <br />
+
+  <select name="theme" id="slide_theme">
+    <option value="theme_dark">Dark</option>
+    <option value="theme_light">Light</option>
+    <option value="theme_paper">Paper</option>
+  </select>
+
+  <br />
+
+  <span id="slide_sample" class="theme_dark">Slide sample</span>
+
+  <br />
+
+  <input type="submit" id="submit" class="btn btn-success" value="Start presentation" />
+
+  <hr />
+
+  <small>itarato</small>
 
 </div>
 
-<div id="screen"></div>
+<div id="screen" class="theme_dark"></div>
 
 <div id="pagers">
   <div id="prev"></div>
