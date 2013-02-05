@@ -59,10 +59,9 @@ textarea {
   text-align: center;
   font-size: 64px;
   font-family: Helvetica;
-
-  /* Slide styles. */
 }
 
+/* Slide styles. */
 .theme_dark {
   background-color: #000;
   color: #fff;
