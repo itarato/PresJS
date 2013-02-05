@@ -2,7 +2,7 @@ define(function() {
   console.log('PresJS is loaded.');
 
   var slide = 0;
-  var items = null;
+  var items = [];
 
   return {
 
@@ -18,22 +18,25 @@ define(function() {
       for (var idx = 0; idx < length; idx++) {
         var node = nodes[idx];
 
-        slide.push({
+        items.push({
           text: node.getAttribute('TEXT')
         });
       }
     },
 
     next: function() {
-      slide++;
+      var length = items.length;
+      slide >= (length - 1) ? null : slide++;
+      return items[slide];
     },
 
     prev: function() {
-      slide--;
+      slide > 0 ? slide-- : null;
+      return items[slide];
     },
 
-    showSlide: function() {
-
+    current: function() {
+      return items[slide];
     }
 
   };

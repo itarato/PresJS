@@ -6,19 +6,24 @@ requirejs.config({
   urlArgs: 'bust=' +  (new Date()).getTime()
 });
 
-requirejs(['jquery', 'app/presjs'], function($, PresJS) {
+requirejs(['jquery', 'app/presjs', 'app/screening'], function($, PresJS, Screening) {
   console.log('Main file is loaded.');
 
   $('#submit').click(function() {
     PresJS.start($('#mmxml').val());
+    $('#screen,#pagers').show();
+    $('#page').hide();
+    Screening.present(PresJS.current());
   });
 
   $('#next').click(function() {
-    PresJS.next();
+    Screening.present(PresJS.next());
   });
 
   $('#prev').click(function() {
-    PresJS.prev();
+    Screening.present(PresJS.prev());
   });
+
+  Screening.setScreen($('#screen'));
 
 });
