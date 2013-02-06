@@ -23,6 +23,14 @@ define(function() {
       content = content + '</div>';
 
       screenArea.html(content);
+
+      if (slide.link) {
+        screenArea.css('background-image', 'url(' + slide.link + ')');
+      }
+      else {
+        screenArea.css('background-image', 'none');
+      }
+
       var content_height = jQuery('.slide_content').height();
       var screen_height = screenArea.height();
       jQuery('.slide_content').css('margin-top', (screen_height - content_height) * 0.5);

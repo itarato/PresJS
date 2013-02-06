@@ -65,6 +65,7 @@ textarea {
   font-size: 64px;
   line-height: 64px;
   font-family: Helvetica;
+  background-size: 100% auto;
 }
 
 .slide_content {
