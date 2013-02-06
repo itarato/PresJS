@@ -25,6 +25,11 @@ textarea {
   width: 50%;
   height: 100%;
   cursor: pointer;
+  opacity: 0.1;
+}
+
+#next:hover, #prev:hover {
+  opacity: 0.4;
 }
 
 #next {
@@ -58,7 +63,23 @@ textarea {
   display: none;
   text-align: center;
   font-size: 64px;
+  line-height: 64px;
   font-family: Helvetica;
+}
+
+.slide_content {
+  padding: 0 64px;
+}
+
+.slide_note {
+  font-size: 48px;
+  line-height: 2em;
+  text-align: left;
+  margin-top: 64px;
+}
+
+.slide_note li {
+  padding-bottom: 32px;
 }
 
 /* Slide styles. */

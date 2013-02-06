@@ -4,6 +4,17 @@ define(function() {
   var slide = 0;
   var items = [];
 
+  var getNoteDom = function(node) {
+    var children = node.childNodes;
+    var child_lenght = children.length;
+    for (var i = 0; i < child_lenght; i++) {
+      if (children[i].nodeName == 'richcontent') {
+        return children[i].getElementsByTagName('body')[0];
+      }
+    }
+    return null;
+  };
+
   return {
 
     start: function(rawXML) {
@@ -18,10 +29,15 @@ define(function() {
       for (var idx = 0; idx < length; idx++) {
         var node = nodes[idx];
 
+
+
         items.push({
-          text: node.getAttribute('TEXT')
+          text: node.getAttribute('TEXT'),
+          link: node.getAttribute('LINK'),
+          note: getNoteDom(node)
         });
       }
+      console.log(items);
     },
 
     next: function() {

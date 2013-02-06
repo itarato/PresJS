@@ -10,12 +10,24 @@ define(function() {
     },
 
     present: function(slide) {
-      screenArea.html('<div class="slide_text">' + slide.text + '</div>');
-      var content_height = jQuery('.slide_text').height();
+      var content = '<div class="slide_content">';
+
+      if (slide.text) {
+        content = content + '<div class="slide_text">' + slide.text + '</div>';
+      }
+
+      if (slide.note) {
+        content = content + '<div class="slide_note">' + jQuery('<div />').html(slide.note).html() + '</div>';
+      }
+
+      content = content + '</div>';
+
+      screenArea.html(content);
+      var content_height = jQuery('.slide_content').height();
       var screen_height = screenArea.height();
-      jQuery('.slide_text').css('margin-top', (screen_height - content_height) * 0.5);
-      jQuery('.slide_text').hide()
-      jQuery('.slide_text').slideDown('fast');
+      jQuery('.slide_content').css('margin-top', (screen_height - content_height) * 0.5);
+      jQuery('.slide_content').hide()
+      jQuery('.slide_content').slideDown('fast');
     }
 
   };
